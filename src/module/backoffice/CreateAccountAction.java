@@ -9,7 +9,10 @@ import errorMessage.CodeError;
 import interfaces.IAction;
 import javax.swing.JOptionPane;
 import model.User;
+import panda.prod.application.PandaProdApplication;
 import utils.Util;
+import view.component.PandaProdPasswordField;
+import view.component.PandaProdTextField;
 
 /**
  *
@@ -19,9 +22,10 @@ public class CreateAccountAction implements IAction {
 
     @Override
     public boolean execute(Object... object) {
-        String login = (String) object[0];
-        String backup = (String) object[1];
-        String password = (String) object[2];
+        PandaProdApplication application = PandaProdApplication.getApplication();
+        String login = ((PandaProdTextField) application.getFocusFrameJComponent("pandaProdTextFieldLoginAdressMail")).getText();
+        String password = new String(((PandaProdPasswordField) application.getFocusFrameJComponent("pandaProdPasswordFieldPassword")).getPassword());
+        String backup = ((PandaProdTextField) application.getFocusFrameJComponent("pandaProdTextFieldBackupMail")).getText();
 
         if (!Util.isWellFormedMail(backup) || !Util.isWellFormedMail(login)) {
             JOptionPane.showMessageDialog(null, "Votre mail est mal écrit",

@@ -72,11 +72,7 @@ public class Dispatcher implements ActionListener {
 
     public void createAccountAction() { // compte cookie swipe a créé
         System.err.println("create");
-        PandaProdApplication application = PandaProdApplication.getApplication();
-        String login = ((PandaProdTextField) application.getFocusFrameJComponent("pandaProdTextFieldLoginAdressMail")).getText();
-        String pwd = new String(((PandaProdPasswordField) application.getFocusFrameJComponent("pandaProdPasswordFieldPassword")).getPassword());
-        String backup = ((PandaProdTextField) application.getFocusFrameJComponent("pandaProdTextFieldBackupMail")).getText();
-        boolean created = new CreateAccountAction().execute(login, backup, pwd);
+        boolean created = new CreateAccountAction().execute();
         if (created) {
             application.getFocusFrame().dispose();
         }
@@ -84,7 +80,6 @@ public class Dispatcher implements ActionListener {
 
     public void inscriptionAction() {
         System.err.println("Inscription");
-        PandaProdApplication application = PandaProdApplication.getApplication();
         application.setFocusFrame(new InscriptionPPFrame());
         new InscriptionFrameInitializer(application.getFocusFrame()).execute();
 
