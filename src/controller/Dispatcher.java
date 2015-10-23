@@ -17,8 +17,6 @@ import module.backoffice.CreateAccountAction;
 import module.ihm.InscriptionFrameInitializer;
 import view.InscriptionPPFrame;
 import view.MainPPFrame;
-import view.component.PandaProdPasswordField;
-import view.component.PandaProdTextField;
 
 public class Dispatcher implements ActionListener {
 
