@@ -5,14 +5,13 @@
  */
 package view;
 
-import interfaces.IJFrame;
 import view.component.PandaProdFrame;
 
 /**
  *
  * @author Lucas
  */
-public class InscriptionPPFrame extends PandaProdFrame implements IJFrame {
+public class InscriptionPPFrame extends PandaProdFrame {
 
     /**
      * Creates new form InscriptionCSFrame

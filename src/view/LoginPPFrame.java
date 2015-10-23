@@ -1,6 +1,5 @@
 package view;
 
-import interfaces.IJFrame;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 
@@ -20,47 +19,46 @@ import view.component.PandaProdPanel;
 import view.component.PandaProdPasswordField;
 import view.component.PandaProdTextField;
 
-public class LoginPPFrame extends PandaProdFrame implements IJFrame {
+public class LoginPPFrame extends PandaProdFrame {
 
-	private static final long serialVersionUID = -1283545032999719731L;
+    private static final long serialVersionUID = -1283545032999719731L;
 
-	private PandaProdPanel logoPanel;
-    
+    private PandaProdPanel logoPanel;
+
     private PandaProdButton pandaProdButtonInscription;
     private PandaProdButton pandaProdButtonLogin;
-    
+
     private PandaProdButtonAttach pandaProdButtonSendLogin; //pour le style souligné du bouton
     private PandaProdButtonAttach pandaProdButtonSendPassword;
-    
+
     private PandaProdLabel pandaProdLabelLogin;
     private PandaProdLabel pandaProdLabelPassword;
-    
+
     private PandaProdPasswordField pandaProdPasswordFieldPassword;
-    
+
     private PandaProdTextField pandaProdTextFieldLogin;
-    
-    
+
     public LoginPPFrame() {
-    	
+
         initFrame();
-        
+
     }
 
-    private void initFrame(){
-    	
-    	initComponents();
-    	placeComponents();
-    	
-    	putComponents();
-    	configFrame();
-    	
-    	refresh();
-    	
+    private void initFrame() {
+
+        initComponents();
+        placeComponents();
+
+        putComponents();
+        configFrame();
+
+        refresh();
+
     }
-    
-    private void putComponents(){
-    	
-    	hsJcomponent.put("pandaProdButtonLogin", pandaProdButtonLogin);
+
+    private void putComponents() {
+
+        hsJcomponent.put("pandaProdButtonLogin", pandaProdButtonLogin);
         hsJcomponent.put("pandaProdButtonInscription", pandaProdButtonInscription);
         hsJcomponent.put("pandaProdButtonSendLogin", pandaProdButtonSendLogin);
         hsJcomponent.put("pandaProdButtonSendPassword", pandaProdButtonSendPassword);
@@ -68,28 +66,28 @@ public class LoginPPFrame extends PandaProdFrame implements IJFrame {
         hsJcomponent.put("pandaProdLabelPassword", pandaProdLabelPassword);
         hsJcomponent.put("pandaProdPasswordFieldPassword", pandaProdPasswordFieldPassword);
         hsJcomponent.put("pandaProdTextFieldLogin", pandaProdTextFieldLogin);
-        
+
     }
-    
-    private void configFrame(){
-    	
-    	setTitle("Login");
-    	
-    	setLocationRelativeTo(null);
+
+    private void configFrame() {
+
+        setTitle("Login");
+
+        setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setVisible(true);
         setSize(720, 480);
         setResizable(false);
-        
+
         pandaProdButtonLogin.setPreferredSize(pandaProdButtonInscription.getSize());
-	
-	Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-	setLocation((dim.width / 2) - (getSize().width/2), (dim.height / 2) - (getSize().height / 2));
-        
+
+        Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+        setLocation((dim.width / 2) - (getSize().width / 2), (dim.height / 2) - (getSize().height / 2));
+
         pandaProdPasswordFieldPassword.setPreferredSize(new Dimension(pandaProdTextFieldLogin.getSize().width + 45, pandaProdPasswordFieldPassword.getSize().height));
         pandaProdPasswordFieldPassword.setSize(new Dimension(pandaProdTextFieldLogin.getSize().width + 45, pandaProdTextFieldLogin.getSize().height));
         pandaProdTextFieldLogin.setPreferredSize(new Dimension(pandaProdTextFieldLogin.getSize().width + 45, pandaProdTextFieldLogin.getSize().height));
-                
+
     }
 
     private void initComponents() {
@@ -103,10 +101,9 @@ public class LoginPPFrame extends PandaProdFrame implements IJFrame {
         pandaProdButtonInscription = new view.component.PandaProdButton();
         pandaProdButtonLogin = new view.component.PandaProdButton();
 
-        
-       	logoPanel = new PandaProdPanel(new File("panda.png"));
-       	logoPanel.setBackground(PandaProdColor.BACKGROUND_FRAME);
-       	
+        logoPanel = new PandaProdPanel(new File("panda.png"));
+        logoPanel.setBackground(PandaProdColor.BACKGROUND_FRAME);
+
         pandaProdLabelLogin.setText("Login");
 
         pandaProdLabelPassword.setText("Password");
@@ -125,80 +122,79 @@ public class LoginPPFrame extends PandaProdFrame implements IJFrame {
         pandaProdButtonInscription.setText("Inscription");
 
     }
-    
-    private void placeComponents(){
-    	
-    	GroupLayout layout = new GroupLayout(getContentPane());
+
+    private void placeComponents() {
+
+        GroupLayout layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            		.addGroup(layout.createSequentialGroup()
-        				.addGap(220, 220, 220)
-        				.addComponent(logoPanel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-    				)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(258, 258, 258)
-                        .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                            .addComponent(pandaProdLabelPassword, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                            .addComponent(pandaProdLabelLogin, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                            .addComponent(pandaProdTextFieldLogin, GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
-                            .addComponent(pandaProdPasswordFieldPassword, GroupLayout.PREFERRED_SIZE, GroupLayout.PREFERRED_SIZE, Short.MAX_VALUE)
-                        )
-                    )
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(258, 258, 258)
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(pandaProdButtonLogin,  GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                                .addGap(20, 20, 20)
-                                .addGap(20, 20, 20)
-                                .addComponent(pandaProdButtonInscription, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                            )
+                                .addGroup(layout.createSequentialGroup()
+                                        .addGap(220, 220, 220)
+                                        .addComponent(logoPanel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                )
+                                .addGroup(layout.createSequentialGroup()
+                                        .addGap(258, 258, 258)
+                                        .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(pandaProdLabelPassword, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(pandaProdLabelLogin, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(pandaProdTextFieldLogin, GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
+                                                .addComponent(pandaProdPasswordFieldPassword, GroupLayout.PREFERRED_SIZE, GroupLayout.PREFERRED_SIZE, Short.MAX_VALUE)
+                                        )
+                                )
+                                .addGroup(layout.createSequentialGroup()
+                                        .addGap(258, 258, 258)
+                                        .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                                .addGroup(layout.createSequentialGroup()
+                                                        .addComponent(pandaProdButtonLogin, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                                        .addGap(20, 20, 20)
+                                                        .addGap(20, 20, 20)
+                                                        .addComponent(pandaProdButtonInscription, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                                )
+                                        )
+                                )
+                                .addGroup(layout.createSequentialGroup()
+                                        .addGap(480, 480, 480)
+                                        .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                                .addGroup(layout.createSequentialGroup()
+                                                        .addComponent(pandaProdButtonSendLogin, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                                        .addGap(20, 20, 20)
+                                                        .addComponent(pandaProdButtonSendPassword, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                                )
+                                        )
+                                )
                         )
-                    )
-                    
-                    .addGroup(layout.createSequentialGroup()
-                		.addGap(480, 480, 480)
-                		.addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            				.addGroup(layout.createSequentialGroup()
-        						.addComponent(pandaProdButtonSendLogin, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-        						.addGap(20, 20, 20)
-        						.addComponent(pandaProdButtonSendPassword, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-    						)
-                        )
-                    )
                 )
-            )
         );
-        
+
         layout.setVerticalGroup(
-            layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-            	.addGap(55, 55, 55)
-        		.addComponent(logoPanel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
-                .addComponent(pandaProdLabelLogin, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pandaProdTextFieldLogin, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(pandaProdLabelPassword, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(pandaProdPasswordFieldPassword, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
-                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-                    .addComponent(pandaProdButtonLogin, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pandaProdButtonInscription, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addComponent(logoPanel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                        .addGap(35, 35, 35)
+                        .addComponent(pandaProdLabelLogin, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pandaProdTextFieldLogin, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(pandaProdLabelPassword, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(pandaProdPasswordFieldPassword, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
+                        .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                .addComponent(pandaProdButtonLogin, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(pandaProdButtonInscription, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                        )
+                        .addGap(85, 85, 85)
+                        .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                .addComponent(pandaProdButtonSendLogin, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(pandaProdButtonSendPassword, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                        )
                 )
-                .addGap(85, 85, 85)
-                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
-	        		.addComponent(pandaProdButtonSendLogin, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-	                .addComponent(pandaProdButtonSendPassword, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                )
-            )
         );
-        
+
     }
 
     private void pandaProdButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {
@@ -206,7 +202,7 @@ public class LoginPPFrame extends PandaProdFrame implements IJFrame {
     }
 
     public static void main(String args[]) {
-    	
+
         try {
             for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -229,16 +225,16 @@ public class LoginPPFrame extends PandaProdFrame implements IJFrame {
                 new LoginPPFrame().setVisible(true);
             }
         });
-        
+
     }
 
     @Override
     public void refresh() {
-    	
-    	validate();
+
+        validate();
         repaint();
         revalidate();
-        
+
     }
-    
+
 }

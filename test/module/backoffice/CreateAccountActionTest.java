@@ -46,7 +46,7 @@ public class CreateAccountActionTest {
 
         CreateAccountAction instance = new CreateAccountAction();
          boolean expResult = true;
-        boolean result = instance.execute("panda.roux.corp@gmail.com", "girardin.lucas@gmail.com", "pandaProd");
+        boolean result = instance.execute("panda.roux.corptest@gmail.com", "girardin.lucas@gmail.com", "pandaProd");
         assertEquals(expResult, result);
 
         System.out.println("execute CreateCSAccountAction unvalide mail 1");

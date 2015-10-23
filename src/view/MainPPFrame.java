@@ -5,14 +5,13 @@
  */
 package view;
 
-import interfaces.IJFrame;
 import view.component.PandaProdFrame;
 
 /**
  *
  * @author Lucas
  */
-public class MainPPFrame extends PandaProdFrame implements IJFrame {
+public class MainPPFrame extends PandaProdFrame {
 
     /**
      * Creates new form MainPPFrame

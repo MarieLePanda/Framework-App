@@ -1,7 +1,5 @@
 package view;
 
-import interfaces.IJFrame;
-
 import javax.swing.GroupLayout;
 import javax.swing.LayoutStyle;
 import javax.swing.UIManager;
@@ -12,7 +10,7 @@ import view.component.PandaProdFrame;
 import view.component.PandaProdLabel;
 import view.component.PandaProdTextField;
 
-public class LoginForgottenPPFrame extends PandaProdFrame implements IJFrame {
+public class LoginForgottenPPFrame extends PandaProdFrame {
 
     private static final long serialVersionUID = 4729753654116728888L;
     private PandaProdButton pandaProdButtonSendLogin;
