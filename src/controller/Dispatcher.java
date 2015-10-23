@@ -22,6 +22,13 @@ import view.component.PandaProdTextField;
 
 public class Dispatcher implements ActionListener {
 
+    private PandaProdApplication application;
+
+    public Dispatcher() {
+        application = PandaProdApplication.getApplication();
+    }
+
+    
     /**
      * Distribue les actions de l'utilsiateur à des traitements
      *
@@ -40,10 +47,7 @@ public class Dispatcher implements ActionListener {
 
     public void logAccountAction() {
         System.err.println("log");
-        PandaProdApplication application = PandaProdApplication.getApplication();
-        String login = ((PandaProdTextField) application.getMainFrameJComponent("pandaProdTextFieldLogin")).getText();
-        String pwd = new String(((PandaProdPasswordField) application.getMainFrameJComponent("pandaProdPasswordFieldPassword")).getPassword());
-        boolean connect = new ConnectAccountAction().execute(login, pwd);
+        boolean connect = new ConnectAccountAction().execute();
         if (connect) {
             application.getMainFrame().dispose();
             application.setMainFrame(new MainPPFrame());
