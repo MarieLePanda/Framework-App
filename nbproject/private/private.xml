@@ -2,6 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/Lucas/Documents/Developpement/Workspace/Java/Framework%20Desktop%20Application/src/controller/Dispatcher.java</file>
+            <file>file:/C:/Users/Lucas/Documents/Developpement/Workspace/Java/Framework%20Desktop%20Application/src/module/backoffice/CreateAccountAction.java</file>
+            <file>file:/C:/Users/Lucas/Documents/Developpement/Workspace/Java/Framework%20Desktop%20Application/src/module/backoffice/ConnectAccountAction.java</file>
+            <file>file:/C:/Users/Lucas/Documents/Developpement/Workspace/Java/Framework%20Desktop%20Application/src/controller/ActionName.java</file>
+            <file>file:/C:/Users/Lucas/Documents/Developpement/Workspace/Java/Framework%20Desktop%20Application/src/interfaces/IAction.java</file>
+        </group>
     </open-files>
 </project-private>

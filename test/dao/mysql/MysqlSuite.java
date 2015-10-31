@@ -17,7 +17,7 @@ import org.junit.runners.Suite;
  * @author Lucas
  */
 @RunWith(Suite.class)
-@Suite.SuiteClasses({dao.mysql.MySQLQueryTest.class, dao.mysql.MySQLConnectTest.class})
+@Suite.SuiteClasses({dao.mysql.MySQLUserTest.class, dao.mysql.MySQLConnectTest.class})
 public class MysqlSuite {
 
     @BeforeClass

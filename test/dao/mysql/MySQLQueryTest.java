@@ -19,9 +19,9 @@ import panda.prod.application.PandaProdApplication;
  *
  * @author Lucas
  */
-public class MySQLQueryTest {
+public class MySQLUserTest {
 
-    public MySQLQueryTest() {
+    public MySQLUserTest() {
     }
 
     @BeforeClass
