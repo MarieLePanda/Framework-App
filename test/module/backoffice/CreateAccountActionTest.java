@@ -59,10 +59,7 @@ public class CreateAccountActionTest {
         result = instance.execute("girardin.lucas@gmail.com", "girardinlucas@gmailcom", "pandaProd");
         assertEquals(expResult, result);
         result = instance.execute("girardin.lucas@gmail.com", "girardin.lucasgmail.com", "pandaProd");
-        assertEquals(expResult, result);
-        
-
-        
+        assertEquals(expResult, result);        
     }
 
 }

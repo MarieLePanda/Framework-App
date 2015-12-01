@@ -18,35 +18,23 @@ public class LoginForgottenPPFrame extends PandaProdFrame {
     private PandaProdTextField pandaProdTextFieldMailAddress;
 
     public LoginForgottenPPFrame() {
-
-        initFrame();
-    }
-    
-    private void initFrame(){
-    	
-    	initComponents();
+       initComponents();
     	placeComponents();
-    	
     	putComponents();
     	configFrame();
-    	
     	refresh();
-    	
     }
     
-    private void configFrame(){
+    @Override
+    protected void configFrame(){
     	
+        super.configFrame();
     	setTitle("Login oublié");
-    	
-    	setLocationRelativeTo(null);
-        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        setVisible(true);
-        setSize(360, 240);
-        setResizable(false);
-        
+        setSize(360, 240);      
     }
     
-    private void putComponents(){
+    @Override
+    protected void putComponents(){
     	
     	hsJcomponent.put("pandaProdButtonSendLogin", pandaProdButtonSendLogin);
         hsJcomponent.put("pandaProdLabelLogin", pandaProdLabelMailAddress);
@@ -136,15 +124,5 @@ public class LoginForgottenPPFrame extends PandaProdFrame {
             }
         });
         
-    }
-
-    @Override
-    public void refresh() {
-    	
-    	validate();
-        repaint();
-        revalidate();
-        
-    }
-    
+    }    
 }

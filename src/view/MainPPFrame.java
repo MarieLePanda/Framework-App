@@ -98,23 +98,15 @@ public class MainPPFrame extends PandaProdFrame {
     private view.component.PandaProdLabel pandaProdLabelWelcome;
     // End of variables declaration//GEN-END:variables
 
-    private void configFrame() {
+    @Override
+    protected void configFrame() {
+        super.configFrame();
         setTitle("Acceuil");
-
-        setLocationRelativeTo(null);
-        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        setVisible(true);
         setSize(720, 480);
-        setResizable(false);
-
-    }
+      }
 
     @Override
-    public void refresh() {
-
-        validate();
-        repaint();
-        revalidate();
-
+    protected void putComponents() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

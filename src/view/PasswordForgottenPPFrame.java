@@ -20,23 +20,15 @@ public class PasswordForgottenPPFrame extends PandaProdFrame {
     private PandaProdTextField pandaProdTextFieldLogin;
 
     public PasswordForgottenPPFrame() {
-
-        initFrame();
-
-    }
-
-    private void initFrame() {
-
         initComponents();
         placeComponents();
-
         putComponents();
         configFrame();
-
         refresh();
     }
 
-    private void putComponents() {
+    @Override
+    protected void putComponents() {
 
         hsJcomponent.put("pandaProdButtonSendPassword", pandaProdButtonSendPassword);
         hsJcomponent.put("pandaProdLabelLogin", pandaProdLabelLogin);
@@ -46,7 +38,8 @@ public class PasswordForgottenPPFrame extends PandaProdFrame {
 
     }
 
-    private void configFrame() {
+    @Override
+    protected void configFrame() {
 
         setTitle("Mot de passe oublié");
 
@@ -153,14 +146,4 @@ public class PasswordForgottenPPFrame extends PandaProdFrame {
         });
 
     }
-
-    @Override
-    public void refresh() {
-
-        validate();
-        repaint();
-        revalidate();
-
-    }
-
 }

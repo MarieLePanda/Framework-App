@@ -39,25 +39,15 @@ public class LoginPPFrame extends PandaProdFrame {
     private PandaProdTextField pandaProdTextFieldLogin;
 
     public LoginPPFrame() {
-
-        initFrame();
-
-    }
-
-    private void initFrame() {
-
         initComponents();
         placeComponents();
-
         putComponents();
         configFrame();
-
         refresh();
-
     }
 
-    private void putComponents() {
-
+    @Override
+    protected void putComponents() {
         hsJcomponent.put("pandaProdButtonLogin", pandaProdButtonLogin);
         hsJcomponent.put("pandaProdButtonInscription", pandaProdButtonInscription);
         hsJcomponent.put("pandaProdButtonSendLogin", pandaProdButtonSendLogin);
@@ -69,25 +59,19 @@ public class LoginPPFrame extends PandaProdFrame {
 
     }
 
-    private void configFrame() {
+    @Override
+    protected void configFrame() {
 
+        super.configFrame();
         setTitle("Login");
-
-        setLocationRelativeTo(null);
-        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        setVisible(true);
         setSize(720, 480);
-        setResizable(false);
 
         pandaProdButtonLogin.setPreferredSize(pandaProdButtonInscription.getSize());
-
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
         setLocation((dim.width / 2) - (getSize().width / 2), (dim.height / 2) - (getSize().height / 2));
-
         pandaProdPasswordFieldPassword.setPreferredSize(new Dimension(pandaProdTextFieldLogin.getSize().width + 45, pandaProdPasswordFieldPassword.getSize().height));
         pandaProdPasswordFieldPassword.setSize(new Dimension(pandaProdTextFieldLogin.getSize().width + 45, pandaProdTextFieldLogin.getSize().height));
         pandaProdTextFieldLogin.setPreferredSize(new Dimension(pandaProdTextFieldLogin.getSize().width + 45, pandaProdTextFieldLogin.getSize().height));
-
     }
 
     private void initComponents() {
@@ -227,14 +211,4 @@ public class LoginPPFrame extends PandaProdFrame {
         });
 
     }
-
-    @Override
-    public void refresh() {
-
-        validate();
-        repaint();
-        revalidate();
-
-    }
-
 }
