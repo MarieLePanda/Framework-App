@@ -5,6 +5,8 @@
  */
 package controller;
 
+import interfaces.AbstractIHMAction;
+import interfaces.IAction;
 import panda.prod.application.PandaProdApplication;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,7 +16,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import module.backoffice.ConnectAccountAction;
 import module.backoffice.CreateAccountAction;
-import module.ihm.InscriptionFrameInitializer;
+import module.factory.ActionBackOfficeFactory;
+import module.factory.ActionFrontOffice;
+import module.frontoffice.InscriptionFrameInitializer;
 import view.InscriptionPPFrame;
 import view.MainPPFrame;
 
@@ -26,7 +30,6 @@ public class Dispatcher implements ActionListener {
         application = PandaProdApplication.getApplication();
     }
 
-    
     /**
      * Distribue les actions de l'utilsiateur à des traitements
      *
@@ -45,7 +48,8 @@ public class Dispatcher implements ActionListener {
 
     public void logAccountAction() {
         System.err.println("log");
-        boolean connect = new ConnectAccountAction().execute();
+        IAction action = ActionBackOfficeFactory.getInstance().createAction(ConnectAccountAction.class);
+        boolean connect = action.execute();
         if (connect) {
             application.getMainFrame().dispose();
             application.setMainFrame(new MainPPFrame());
@@ -70,7 +74,8 @@ public class Dispatcher implements ActionListener {
 
     public void createAccountAction() { // compte cookie swipe a créé
         System.err.println("create");
-        boolean created = new CreateAccountAction().execute();
+        IAction action = ActionBackOfficeFactory.getInstance().createAction(CreateAccountAction.class);
+        boolean created = action.execute();
         if (created) {
             application.getFocusFrame().dispose();
         }
@@ -79,7 +84,7 @@ public class Dispatcher implements ActionListener {
     public void inscriptionAction() {
         System.err.println("Inscription");
         application.setFocusFrame(new InscriptionPPFrame());
-        new InscriptionFrameInitializer(application.getFocusFrame()).execute();
-
+        AbstractIHMAction action = ActionFrontOffice.getInstance().createAction(InscriptionFrameInitializer.class, application.getFocusFrame());
+        action.execute();
     }
 }

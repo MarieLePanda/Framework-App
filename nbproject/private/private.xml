@@ -5,9 +5,8 @@
         <group>
             <file>file:/C:/Users/Lucas/Documents/Developpement/Workspace/Java/Framework%20Desktop%20Application/src/controller/Dispatcher.java</file>
             <file>file:/C:/Users/Lucas/Documents/Developpement/Workspace/Java/Framework%20Desktop%20Application/src/module/factory/ActionBackOfficeFactory.java</file>
-            <file>file:/C:/Users/Lucas/Documents/Developpement/Workspace/Java/Framework%20Desktop%20Application/src/module/backoffice/CreateAccountAction.java</file>
-            <file>file:/C:/Users/Lucas/Documents/Developpement/Workspace/Java/Framework%20Desktop%20Application/src/interfaces/AbstractIHMAction.java</file>
-            <file>file:/C:/Users/Lucas/Documents/Developpement/Workspace/Java/Framework%20Desktop%20Application/src/controller/ActionName.java</file>
+            <file>file:/C:/Users/Lucas/Documents/Developpement/Workspace/Java/Framework%20Desktop%20Application/src/module/factory/ActionFrontOffice.java</file>
+            <file>file:/C:/Users/Lucas/Documents/Developpement/Workspace/Java/Framework%20Desktop%20Application/src/module/frontoffice/LoginForgottenFrameInitializer.java</file>
         </group>
     </open-files>
 </project-private>

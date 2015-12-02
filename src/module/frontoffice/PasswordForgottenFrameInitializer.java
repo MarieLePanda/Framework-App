@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package module.ihm;
+package module.frontoffice;
 
 import controller.ActionName;
 import controller.Dispatcher;
@@ -15,18 +15,18 @@ import view.component.PandaProdFrame;
  *
  * @author Yehouda
  */
-public class LoginForgottenFrameInitializer extends AbstractIHMAction {
+public class PasswordForgottenFrameInitializer extends AbstractIHMAction{
 
-    public LoginForgottenFrameInitializer(PandaProdFrame csFrame) {
+    public PasswordForgottenFrameInitializer(PandaProdFrame csFrame) {
         super(csFrame);
     }
 
     @Override
     public boolean execute(Object... object) {
         Dispatcher dispatcher = new Dispatcher();
-        PandaProdButton button = (PandaProdButton) hsJcomponent.get("pandaProdButtonSendLogin");
+        PandaProdButton button = (PandaProdButton) hsJcomponent.get("pandaProdButtonSendPassword");
         button.addActionListener(dispatcher);
-        button.setActionCommand(ActionName.sendMailForgottenLogin);
+        button.setActionCommand(ActionName.sendMailForgottenPassword);
         return true;
     }
     

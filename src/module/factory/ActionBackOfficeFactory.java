@@ -7,19 +7,40 @@ package module.factory;
 
 import controller.ActionName;
 import interfaces.IAction;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import module.backoffice.ConnectAccountAction;
+import module.backoffice.CreateAccountAction;
+import view.component.PandaProdFrame;
 
 /**
  *
  * @author Lucas
  */
 public class ActionBackOfficeFactory {
-    
-    public IAction createAction(String action){
-        
-        switch(action){
-            case ActionName.createAccount :
-                
-        }
-        
+
+    private ActionBackOfficeFactory() {
     }
+
+    public static ActionBackOfficeFactory getInstance() {
+        return ActionBackOfficeFactoryHolder.INSTANCE;
+    }
+
+    private static class ActionBackOfficeFactoryHolder {
+
+        private static final ActionBackOfficeFactory INSTANCE = new ActionBackOfficeFactory();
+    }
+
+    public IAction createAction(Class c) {
+        IAction action = null;
+        try {
+            action = (IAction) c.newInstance();
+        } catch (InstantiationException | IllegalAccessException ex) {
+            Logger.getLogger(ActionBackOfficeFactory.class
+                    .getName()).log(Level.SEVERE, null, ex);
+        } finally {
+            return action;
+        }
+    }
+
 }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package module.ihm;
+package module.frontoffice;
 
 import controller.ActionName;
 import controller.Dispatcher;
