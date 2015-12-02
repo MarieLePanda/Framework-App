@@ -7,7 +7,7 @@ package module.frontoffice;
 
 import controller.ActionName;
 import controller.Dispatcher;
-import interfaces.AbstractIHMAction;
+import interfaces.IActionFrontOffice;
 import view.component.PandaProdButton;
 import view.component.PandaProdFrame;
 
@@ -15,7 +15,7 @@ import view.component.PandaProdFrame;
  *
  * @author Lucas
  */
-public class LoginFrameInitializer extends AbstractIHMAction {
+public class LoginFrameInitializer extends IActionFrontOffice {
 
     public LoginFrameInitializer(PandaProdFrame csFrame) {
         super(csFrame);

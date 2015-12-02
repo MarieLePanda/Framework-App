@@ -10,6 +10,6 @@ package interfaces;
  *
  * @author Lucas
  */
-public interface IAction {
-    public boolean execute(Object ... object);
+public abstract class IActionBackOffice {
+    public abstract boolean execute(Object ... object);
 }

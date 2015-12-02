@@ -5,8 +5,8 @@
  */
 package controller;
 
-import interfaces.AbstractIHMAction;
-import interfaces.IAction;
+import interfaces.IActionBackOffice;
+import interfaces.IActionFrontOffice;
 import panda.prod.application.PandaProdApplication;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -48,7 +48,7 @@ public class Dispatcher implements ActionListener {
 
     public void logAccountAction() {
         System.err.println("log");
-        IAction action = ActionBackOfficeFactory.getInstance().createAction(ConnectAccountAction.class);
+        IActionBackOffice action = ActionBackOfficeFactory.getInstance().createAction(ConnectAccountAction.class);
         boolean connect = action.execute();
         if (connect) {
             application.getMainFrame().dispose();
@@ -74,7 +74,7 @@ public class Dispatcher implements ActionListener {
 
     public void createAccountAction() { // compte cookie swipe a créé
         System.err.println("create");
-        IAction action = ActionBackOfficeFactory.getInstance().createAction(CreateAccountAction.class);
+        IActionBackOffice action = ActionBackOfficeFactory.getInstance().createAction(CreateAccountAction.class);
         boolean created = action.execute();
         if (created) {
             application.getFocusFrame().dispose();
@@ -84,7 +84,7 @@ public class Dispatcher implements ActionListener {
     public void inscriptionAction() {
         System.err.println("Inscription");
         application.setFocusFrame(new InscriptionPPFrame());
-        AbstractIHMAction action = ActionFrontOffice.getInstance().createAction(InscriptionFrameInitializer.class, application.getFocusFrame());
+        IActionFrontOffice action = ActionFrontOffice.getInstance().createAction(InscriptionFrameInitializer.class, application.getFocusFrame());
         action.execute();
     }
 }

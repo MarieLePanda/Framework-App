@@ -7,7 +7,7 @@ package module.backoffice;
 
 import panda.prod.application.PandaProdApplication;
 import errorMessage.CodeError;
-import interfaces.IAction;
+import interfaces.IActionBackOffice;
 import javax.swing.JOptionPane;
 import model.User;
 import view.component.PandaProdPasswordField;
@@ -17,7 +17,7 @@ import view.component.PandaProdTextField;
  *
  * @author Lucas
  */
-public class ConnectAccountAction implements IAction {
+public class ConnectAccountAction extends IActionBackOffice {
 
     @Override
     public boolean execute(Object... object) {

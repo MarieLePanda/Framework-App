@@ -5,13 +5,13 @@
  */
 package module.backoffice;
 
-import interfaces.IAction;
+import interfaces.IActionBackOffice;
 
 /**
  *
  * @author Lucas
  */
-public class DisconectAccountAction implements IAction {
+public class DisconectAccountAction extends IActionBackOffice{
     
     @Override
     public boolean execute(Object ... object) {

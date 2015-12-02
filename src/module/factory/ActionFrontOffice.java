@@ -5,18 +5,11 @@
  */
 package module.factory;
 
-import controller.ActionName;
-import interfaces.AbstractIHMAction;
-import interfaces.IAction;
+import interfaces.IActionFrontOffice;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import module.backoffice.ConnectAccountAction;
-import module.backoffice.CreateAccountAction;
-import module.frontoffice.InscriptionFrameInitializer;
-import module.frontoffice.LoginForgottenFrameInitializer;
-import module.frontoffice.LoginFrameInitializer;
 import view.component.PandaProdFrame;
 
 /**
@@ -37,8 +30,8 @@ public class ActionFrontOffice {
         private static final ActionFrontOffice INSTANCE = new ActionFrontOffice();
     }
 
-    public AbstractIHMAction createAction(Class c, PandaProdFrame ppFrame) {
-        AbstractIHMAction action = null;
+    public IActionFrontOffice createAction(Class c, PandaProdFrame ppFrame) {
+        IActionFrontOffice action = null;
         Constructor ctr = null;
         try {
             ctr = c.getDeclaredConstructor(PandaProdFrame.class);
@@ -48,7 +41,7 @@ public class ActionFrontOffice {
             Logger.getLogger(ActionFrontOffice.class.getName()).log(Level.SEVERE, null, ex);
         }
         try {
-            action = (AbstractIHMAction) ctr.newInstance(ppFrame);
+            action = (IActionFrontOffice) ctr.newInstance(ppFrame);
         } catch (InstantiationException | IllegalAccessException | IllegalArgumentException | InvocationTargetException ex) {
             Logger.getLogger(ActionFrontOffice.class.getName()).log(Level.SEVERE, null, ex);
         }

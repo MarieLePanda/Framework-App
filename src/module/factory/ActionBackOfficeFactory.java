@@ -5,13 +5,9 @@
  */
 package module.factory;
 
-import controller.ActionName;
-import interfaces.IAction;
+import interfaces.IActionBackOffice;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import module.backoffice.ConnectAccountAction;
-import module.backoffice.CreateAccountAction;
-import view.component.PandaProdFrame;
 
 /**
  *
@@ -31,10 +27,10 @@ public class ActionBackOfficeFactory {
         private static final ActionBackOfficeFactory INSTANCE = new ActionBackOfficeFactory();
     }
 
-    public IAction createAction(Class c) {
-        IAction action = null;
+    public IActionBackOffice createAction(Class c) {
+        IActionBackOffice action = null;
         try {
-            action = (IAction) c.newInstance();
+            action = (IActionBackOffice) c.newInstance();
         } catch (InstantiationException | IllegalAccessException ex) {
             Logger.getLogger(ActionBackOfficeFactory.class
                     .getName()).log(Level.SEVERE, null, ex);

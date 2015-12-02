@@ -1,12 +1,8 @@
 package panda.prod.application;
 
-
-import controller.ActionName;
-import interfaces.AbstractIHMAction;
+import interfaces.IActionFrontOffice;
 import java.util.HashMap;
-
 import javax.swing.UnsupportedLookAndFeelException;
-
 import model.User;
 import module.factory.ActionFrontOffice;
 import module.frontoffice.LoginFrameInitializer;
@@ -37,7 +33,7 @@ public class PandaProdApplication {
     	initLookAndFeel();       
         LoginPPFrame loginFrame = new LoginPPFrame();
         this.mainFrame = loginFrame;
-        AbstractIHMAction action = ActionFrontOffice.getInstance().createAction(LoginFrameInitializer.class, mainFrame);
+        IActionFrontOffice action = ActionFrontOffice.getInstance().createAction(LoginFrameInitializer.class, mainFrame);
         System.err.println("ACTION " + action);
         action.execute();
     }

@@ -7,7 +7,7 @@ package module.frontoffice;
 
 import controller.ActionName;
 import controller.Dispatcher;
-import interfaces.AbstractIHMAction;
+import interfaces.IActionFrontOffice;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import view.component.PandaProdButton;
@@ -17,7 +17,7 @@ import view.component.PandaProdFrame;
  *
  * @author Yehouda
  */
-public class InscriptionFrameInitializer extends AbstractIHMAction {
+public class InscriptionFrameInitializer extends IActionFrontOffice {
 
     private final PandaProdFrame frame;
 

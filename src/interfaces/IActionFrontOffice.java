@@ -12,11 +12,11 @@ import view.component.PandaProdFrame;
  *
  * @author mickx
  */
-public abstract class AbstractIHMAction implements IAction {
+public abstract class IActionFrontOffice extends IActionBackOffice{
    
     protected HashMap<String, Object> hsJcomponent;
 
-    public AbstractIHMAction(PandaProdFrame csFrame) {
-        hsJcomponent = csFrame.getJComponent();
+    public IActionFrontOffice(PandaProdFrame ppFrame) {
+        hsJcomponent = ppFrame.getJComponent();
     }
 }
